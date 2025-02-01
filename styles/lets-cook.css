@@ -1,0 +1,123 @@
+.lets-cook-header {
+  text-align: center;
+}
+
+.lets-cook-header__hero {
+  width: 100%;
+  min-height: 20rem;
+  aspect-ratio: 16/3;
+  overflow: hidden;
+}
+
+.lets-cook-header__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.lets-cook-header--content {
+  min-height: 15rem;
+  margin: 0 auto;
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+  isolation: isolate;
+}
+
+.lets-cook-header--content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://cdn.nmg-platform.com/yourhomeappliance/media/homepage/HA Circle.webp");
+  background-size: 40rem;
+  background-repeat: no-repeat;
+  background-position: right -4rem center;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.lets-cook-header__title {
+  font-size: clamp(2rem, 2vw, 2.5rem);
+  text-wrap: balance;
+  margin-block: 0;
+  margin-inline: 2rem;
+}
+
+.lets-cook-header__description {
+  font-size: 1.2rem;
+  margin: 0 2rem;
+  max-width: 1000px;
+}
+
+.lets-cook--links {
+  --_lets-cook-bg-blue: var(--color-primary-light, #007fae);
+  --_lets-cook-btn-color: var(----color-primary-yellow, #ffe075);
+  --_lets-cook-btn-color-hover: var(----color-support-dark-yellow, #c7a25a);
+
+  background-color: var(--_lets-cook-bg-blue);
+  padding: 2rem 4rem;
+  border-bottom: solid 0.2rem #fff;
+}
+
+.lets-cook--links-wrapper {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr auto;
+  gap: 2rem;
+}
+
+.lest-cook__link {
+  grid-column: span 1;
+  grid-row: span 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: subgrid;
+  justify-items: center;
+  align-items: center;
+  gap: 1rem;
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+}
+
+.lets-cook--btn {
+  display: block;
+  width: fit-content;
+  text-decoration: none;
+  color: #000;
+  background-color: var(--_lets-cook-btn-color);
+  padding: 1rem 3rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  transition: all 0.5s ease-in-out;
+}
+
+.lets-cook--btn:hover,
+.lets-cook--btn:focus {
+  background-color: var(--_lets-cook-btn-color-hover);
+  color: inherit;
+}
+
+@media screen and (max-width: 1005px) {
+  .lets-cook-header--content::after {
+    background-size: 20rem;
+    background-position: right -4rem bottom -4rem;
+  }
+
+  .lets-cook--links-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
