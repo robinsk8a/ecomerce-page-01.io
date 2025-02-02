@@ -6,6 +6,7 @@
   grid-template-columns: 2fr 2fr;
   justify-items: center;
   gap: 4rem;
+  margin-block: 2rem 4rem;
 }
 
 .our-story--imgs {
